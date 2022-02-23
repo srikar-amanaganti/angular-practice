@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Enter Data</h4>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Title</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" formControlName="title">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Description</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="description" formControlName="desc">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [routerLink]="['/form/print']" routerLinkActive="router-link-active">Enter</button>
+          </form>
+          <!-- {{this.todoForm.value.title}} --> 
+    </div>
+  </div>
+  <div *ngIf="this.todos.length === 0 else elseBlock" >No todos to display</div>
+  <ng-template #elseBlock>
+    <div *ngFor="let todo of todos">
+      <app-print-todo [todo]="todo" (todoDelete)="Deletetodo($event)"></app-print-todo>
+    </div>
+  </ng-template>
+  
+  <!-- <router-outlet></router-outlet> -->

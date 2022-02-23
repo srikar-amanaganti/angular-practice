@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg text-info bg-dark p-2">
+  <a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link"  [routerLink]="['/form']"routerLinkActive="router-link-active">Insert</a>
+      <a class="nav-item nav-link" [routerLink]="['/form']"routerLinkActive="router-link-active">Update</a>
+      <a class="nav-item nav-link" [routerLink]="['/form']"routerLinkActive="router-link-active">Delete</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>  
+</div>
